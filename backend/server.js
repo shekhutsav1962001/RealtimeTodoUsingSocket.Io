@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const app = express()
 var cors = require('cors')
 var bodyParser = require('body-parser')
-const url = 'mongodb+srv://quizy:quizy@cluster0.0pxq2.mongodb.net/todo?retryWrites=true&w=majority'
+
 // const url = 'mongodb://localhost/tododb'
 const PORT = process.env.PORT || 3000
 var appRoutes = require('./routes/app')
