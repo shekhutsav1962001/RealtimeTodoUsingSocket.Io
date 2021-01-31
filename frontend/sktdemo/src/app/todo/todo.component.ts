@@ -34,7 +34,7 @@ export class TodoComponent implements OnInit {
   }
   getTodo()
   {
-    this.http.get('http://127.0.0.1:3000/todo').subscribe((todos)=>{
+    this.http.get('https://utsavtododemo.herokuapp.com/todo').subscribe((todos)=>{
       this.toDoList =todos;
     });
   }
@@ -42,7 +42,7 @@ export class TodoComponent implements OnInit {
   delete(todo) {
 
     var todoid = todo._id;
-    this.http.delete('http://127.0.0.1:3000/tododelete/'+todoid).subscribe(
+    this.http.delete('https://utsavtododemo.herokuapp.com/tododelete/'+todoid).subscribe(
       data=>{
         console.log("data1");
         console.log(data)
@@ -58,7 +58,7 @@ export class TodoComponent implements OnInit {
   addTodo(value)
   {
 
-    this.http.post('http://127.0.0.1:3000/todo',{description:value},{
+    this.http.post('https://utsavtododemo.herokuapp.com/todo',{description:value},{
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     }).subscribe(
